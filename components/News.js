@@ -14,40 +14,38 @@ export default class News extends React.Component {
         data: null,
         alias: '1'
     };
-
+/*
     async getData() {
         const url = `${baseUrl}/api/news/`;
         const res = await axios.get(url);
         return await res.json();
     }
-
-    componentDidMount() {
-        this.getData().then(data => this.setState({imagesList: data}))
-            .catch(err => { /*...handle the error...*/});
+*/
+    async componentDidMount() {
+        const url = `${baseUrl}/api/news/`;
         try {
-            /*
             const response = await fetch(
+                url,
                 {
                     method: 'GET',
                     redirect: 'follow',
                     headers: {
                         'Accept': 'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Headers': 'Origin, Content-Type'
                     },
                     responseType:'json',
+                    mode:'cors'
                 }
-                */
+            );
 
-            const response = async () => {
-                const url = `${baseUrl}/api/news/`;
-                const response = await axios.get(url);
-                console.log(response.data);
-            };
-            /*);*/
-
+            const data = await response.json();
+            console.log('data', data);
             //const data = await response.response;
 
             this.setState({
-                //imagesList: data,
+                imagesList: data,
                 isLoaded: true,
             });
         } catch (e) {
@@ -65,7 +63,12 @@ export default class News extends React.Component {
             );
         }
 
-        return (<NewsScreen list={this.state.imagesList} alias={this.state.alias}/>);
+        if (this.state.imagesList.count > 0) {
+            return (<NewsScreen list={this.state.imagesList} alias={this.state.alias}/>);
+        }
+        return (
+        <Text>!!!</Text>
+        );
     }
 }
 
