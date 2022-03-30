@@ -1,6 +1,5 @@
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import HomeScreen from "./HomeScreen";
-import NewsScreen from "./NewsScreen";
 import News from "../components/News";
 import BriefcaseScreen from "./BriefcaseScreen";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
@@ -12,7 +11,10 @@ function BottomNavigationScreen() {
         <Tab.Navigator
             initialRouteName="Feed"
             screenOptions={{
-                tabBarActiveTintColor: '#e91e63',
+                tabBarActiveTintColor: '#0082F4',
+                tabBarInactiveTintColor: '#D8D9E4',
+                tabBarActiveBackgroundColor: '#191B1F',
+                tabBarInactiveBackgroundColor: '#191B1F',
             }}
         >
             <Tab.Screen

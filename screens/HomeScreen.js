@@ -1,10 +1,10 @@
-import {Text, View} from "react-native";
+import { Text, Box } from 'native-base';
 
 function HomeScreen() {
     return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Text>Home!</Text>
-        </View>
+        <Box flex={1} bg="brand.900" alignItems="center" justifyContent="center">
+            <Text color="brand.50">Home!</Text>
+        </Box>
     );
 }
 
