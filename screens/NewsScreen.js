@@ -52,8 +52,7 @@ const NewsScreen = (props) => {
                                     </Heading>
                                 </Stack>
                                 <Text fontWeight="400">
-                                    Bengaluru (also called Bangalore) is the center of India's high-tech
-                                    industry. The city is also known for its parks and nightlife.
+                                    { item.short_description }
                                 </Text>
                                 <HStack alignItems="center" space={4} justifyContent="space-between">
                                     <HStack alignItems="center">
@@ -71,7 +70,11 @@ const NewsScreen = (props) => {
                                     base: "auto",
                                     md: "0"
                                 }}>
-                                    <Button size="sm" variant="outline">
+                                    <Button
+                                        buttonStyle={styles.button}
+                                        titleStyle={styles.buttonText}
+                                        size="sm"
+                                        variant="outline">
                                         ОТКРЫТЬ
                                     </Button>
                                 </Stack>

@@ -1,6 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import {Box, extendTheme, NativeBaseProvider} from 'native-base';
 import BottomNavigationScreen from "./screens/BottomNavigationScreen";
+import StackNavigationScreen from "./screens/StackNavigationScreen";
+
 
 const newColorTheme = {
     brand: {
