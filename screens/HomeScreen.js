@@ -1,4 +1,4 @@
-import { Text, Box } from 'native-base';
+import { Text, Box, Button } from 'native-base';
 
 function HomeScreen() {
     return (

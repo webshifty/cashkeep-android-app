@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { Box, Heading, AspectRatio, Image, Text, Center, HStack, Stack, Button, Divider } from "native-base";
+import ArticleScreen from "./ArticleScreen";
+import * as RootNavigation from '../RootNavigation.js';
 
 const NewsScreen = (props) => {
-    //console.log(props.list);
+
     return (
         <Box flex={1} bg="brand.900" alignItems="center" justifyContent="center">
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -73,7 +75,8 @@ const NewsScreen = (props) => {
                                     <Button
                                         buttonStyle={styles.button}
                                         titleStyle={styles.buttonText}
-                                        size="sm"
+                                        size="lg"
+                                        onPress={() => RootNavigation.navigate('ArticleScreen', { userName: 'Lucy' })}
                                         variant="outline">
                                         ОТКРЫТЬ
                                     </Button>

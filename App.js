@@ -1,8 +1,13 @@
 import { NavigationContainer } from '@react-navigation/native';
 import {Box, extendTheme, NativeBaseProvider} from 'native-base';
+import CommonData from "./components/CommonData";
+import { navigationRef } from './RootNavigation';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from "./screens/HomeScreen";
+import ArticleScreen from "./screens/ArticleScreen";
+import News from "./components/News";
+import BriefcaseScreen from "./screens/BriefcaseScreen";
 import BottomNavigationScreen from "./screens/BottomNavigationScreen";
-import StackNavigationScreen from "./screens/StackNavigationScreen";
-
 
 const newColorTheme = {
     brand: {
@@ -20,14 +25,13 @@ const newColorTheme = {
     },
 };
 const theme = extendTheme({ colors: newColorTheme });
+const Stack = createNativeStackNavigator();
 
 export default function App() {
     return (
         <NativeBaseProvider theme={theme}>
             <Box flex={1} h="100%" w="100%" maxWidth="100%" >
-                <NavigationContainer>
-                    <BottomNavigationScreen/>
-                </NavigationContainer>
+                <CommonData />
             </Box>
         </NativeBaseProvider>
     );

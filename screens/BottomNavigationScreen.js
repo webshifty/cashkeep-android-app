@@ -3,11 +3,19 @@ import HomeScreen from "./HomeScreen";
 import News from "../components/News";
 import BriefcaseScreen from "./BriefcaseScreen";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import {navigationRef} from "../RootNavigation";
+import {NavigationContainer} from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
-function BottomNavigationScreen() {
+const BottomNavigationScreen = (props) => {
+    let countArticles = props.list.count_today_articles;
+    if (countArticles === 0) {
+        countArticles = null;
+    }
+
     return (
+        <NavigationContainer>
         <Tab.Navigator
             initialRouteName="Feed"
             screenOptions={{
@@ -15,6 +23,7 @@ function BottomNavigationScreen() {
                 tabBarInactiveTintColor: '#D8D9E4',
                 tabBarActiveBackgroundColor: '#191B1F',
                 tabBarInactiveBackgroundColor: '#191B1F',
+                headerShown: false
             }}
         >
             <Tab.Screen
@@ -35,7 +44,11 @@ function BottomNavigationScreen() {
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="newspaper" color={color} size={size} />
                     ),
-                    tabBarBadge: 3,
+                    tabBarBadge: countArticles,
+                    tabBarBadgeStyle: {
+                        color:'#ffffff',
+                        backgroundColor:'#ff414b'
+                    }
                 }}
             />
             <Tab.Screen
@@ -49,6 +62,7 @@ function BottomNavigationScreen() {
                 }}
             />
         </Tab.Navigator>
+        </NavigationContainer>
     );
 }
 

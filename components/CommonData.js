@@ -2,10 +2,11 @@ import React from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import NewsScreen from "../screens/NewsScreen";
 import {Box} from "native-base";
+import BottomNavigationScreen from "../screens/BottomNavigationScreen";
 
 const baseUrl = 'https://cashkeep.info';
 
-export default class News extends React.Component {
+export default class CommonData extends React.Component {
 
     state = {
         isLoaded: false,
@@ -39,26 +40,6 @@ export default class News extends React.Component {
     }
 
     render() {
-
-        if (!this.state.isLoaded) {
-            return (
-                <Box flex={1} bg="brand.900" alignItems="center" justifyContent="center">
-                    <ActivityIndicator size="small" style={styles.loader} />
-                </Box>
-            );
-        }
-
-        return (<NewsScreen list={this.state.articlesList} alias={this.state.alias} url={baseUrl}/>);
-    }
+        return (<BottomNavigationScreen list={this.state.articlesList}/>);
+    };
 }
-
-const styles = StyleSheet.create({
-    loader: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    loaderContainer: {
-        flex: 1
-    }
-});
