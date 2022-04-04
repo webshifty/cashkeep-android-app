@@ -3,8 +3,6 @@ import HomeScreen from "./HomeScreen";
 import News from "../components/News";
 import BriefcaseScreen from "./BriefcaseScreen";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import {navigationRef} from "../RootNavigation";
-import {NavigationContainer} from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +13,6 @@ const BottomNavigationScreen = (props) => {
     }
 
     return (
-        <NavigationContainer>
         <Tab.Navigator
             initialRouteName="Feed"
             screenOptions={{
@@ -62,7 +59,6 @@ const BottomNavigationScreen = (props) => {
                 }}
             />
         </Tab.Navigator>
-        </NavigationContainer>
     );
 }
 
