@@ -1,5 +1,6 @@
 import React from "react";
-import {Box, extendTheme, NativeBaseProvider} from 'native-base';
+import 'react-native-gesture-handler';
+import { Box, extendTheme, NativeBaseProvider, Button, Image } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CommonData from "./components/CommonData";
@@ -29,8 +30,28 @@ export default function App() {
             <Box flex={1} h="100%" w="100%" maxWidth="100%" >
                 <NavigationContainer>
                     <Stack.Navigator screenOptions={{ headerShown: false }}>
-                        <Stack.Screen name="Home" component={CommonData} />
-                        <Stack.Screen name="Article" component={NewsSingle} />
+                        <Stack.Screen
+                            name="Home"
+                            component={CommonData}
+                            options={{
+                                headerTitle: (props) => <LogoTitle {...props} />,
+                                headerRight: () => (
+                                    <Button
+                                        onPress={() => alert('This is a button!')}
+                                        title="Info"
+                                        color="#fff"
+                                    />
+                                ),
+                            }}
+                        />
+                        <Stack.Screen
+                            name="Article"
+                            component={NewsSingle}
+                            options={{
+                                headerTitle: '',
+                                headerShown: true
+                            }}
+                        />
                     </Stack.Navigator>
                 </NavigationContainer>
             </Box>

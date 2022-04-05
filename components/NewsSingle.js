@@ -31,7 +31,6 @@ export default class NewsSingle extends React.Component {
                 }
             );
             const data = await response.json();
-            console.log(data);
             this.setState({
                 articlesList: data,
                 isLoaded: true,
