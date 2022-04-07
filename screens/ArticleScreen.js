@@ -58,6 +58,7 @@ const ArticleScreen = (props) => {
             <Text fontWeight="400">
                 Источник: { props.url }
             </Text>
+                <Text>{`\n`}</Text>
             </Box>
         </Box>
         </ScrollView>

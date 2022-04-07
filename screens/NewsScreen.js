@@ -86,9 +86,8 @@ const NewsScreen = (props) => {
                                     md: "0"
                                 }}>
                                     <Button
-                                        buttonStyle={styles.button}
-                                        titleStyle={styles.buttonText}
                                         size="lg"
+                                        colorScheme="blue"
                                         onPress={() => navigation.navigate('Article', {id: item.id})}
                                         variant="outline">
                                         ОТКРЫТЬ
