@@ -19,26 +19,8 @@ const NewsScreen = (props) => {
     <Box flex={1} bg="brand.900" alignItems="center" justifyContent="center">
             <ScrollView showsVerticalScrollIndicator={false}>
                 {props.list.data.map((item) => {
-                    const collection = props.url + item.id;
 
                     return (
-                        /**
-                            <View
-                                key={item.image + item.title}
-                                onPress={() => navigate('SingleArticle', {collection, title: item.title})}
-                            >
-                                <Image
-                                    style={{width: '100%', height: 300}}
-                                    source={{uri: item.image}}/>
-                                <Text style={styles.cardText}>{item.title}</Text>
-                                <Button
-                                    buttonStyle={styles.button}
-                                    titleStyle={styles.buttonText}
-                                    onPress={() => navigate('Article', {collection, title: item.title, alias})}
-                                    title='ОТКРЫТЬ'/>
-                            </View>
-                         **/
-
                         <Box key={'box1' + item.id}>
                     <Box width="100%" rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
                             borderColor: "coolGray.600",

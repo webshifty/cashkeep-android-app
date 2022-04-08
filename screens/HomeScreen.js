@@ -191,7 +191,7 @@ const HomeScreen = (props) => {
                 onChange={handleChange}
                 variant="rounded"
                 placeholderTextColor='white'
-                style={{ color: '#ffffff' }}
+                color="#ffffff"
             />
             <PieChart
                 data={data}
