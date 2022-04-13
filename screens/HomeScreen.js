@@ -52,10 +52,10 @@ const HomeScreen = (props) => {
             legendFontColor: "#7F7F7F",
             legendFontSize: 15
         },
-    ])
+    ]);
 
-    const handleChange = () => {
-        const {name, type, text} = event;
+    const handleChange = (event) => {
+        const text = event.nativeEvent.text;
         let processedData = text;
         let btc = 0;
         let eth = 0;
@@ -97,7 +97,7 @@ const HomeScreen = (props) => {
             ])
         } else if (processedData >= 50 && processedData <= 100){
             btc = processedData / 2;
-            eth = processedData / 3;
+            eth = processedData / 3.34;
             sol = processedData / 5;
             btc = Math.round((btc + Number.EPSILON) * 100) / 100;
             eth = Math.round((eth + Number.EPSILON) * 100) / 100;
@@ -126,11 +126,11 @@ const HomeScreen = (props) => {
                 },
             ])
         } else if (processedData > 100) {
-            btc = processedData / 2.5;
-            eth = processedData / 5;
-            sol = processedData / 6.7;
-            cake = processedData / 6.7;
-            shitcoins = processedData / 10;
+            btc = processedData / 2.53;
+            eth = processedData / 5.05;
+            sol = processedData / 6.75;
+            cake = processedData / 6.75;
+            shitcoins = processedData / 10.1;
             btc = Math.round((btc + Number.EPSILON) * 100) / 100;
             eth = Math.round((eth + Number.EPSILON) * 100) / 100;
             sol = Math.round((sol + Number.EPSILON) * 100) / 100;
