@@ -1,6 +1,7 @@
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import HomeScreen from "./HomeScreen";
 import News from "../components/News";
+import Signals from "../components/Signals";
 import BriefcaseScreen from "./BriefcaseScreen";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
@@ -58,8 +59,18 @@ const BottomNavigationScreen = (props) => {
                     ),
                 }}
             />
+            <Tab.Screen
+                name="Сигналы"
+                component={Signals}
+                options={{
+                    tabBarLabel: 'Сигналы',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="chart-bar" color={color} size={size} />
+                    ),
+                }}
+            />
         </Tab.Navigator>
     );
-}
+};
 
 export default BottomNavigationScreen;
