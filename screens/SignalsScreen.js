@@ -5,6 +5,7 @@ import {
     Heading,
     Text,
     Stack,
+    Link,
 } from "native-base";
 
 const SignalsScreen = (props) => {
@@ -12,6 +13,10 @@ const SignalsScreen = (props) => {
         return (
             <Box flex={1} bg="brand.900" alignItems="center" justifyContent="center">
                 <ScrollView showsVerticalScrollIndicator={false}>
+                    <Box
+                        py="5"
+                        key={'box999'}
+                    />
                     {props.list.data.map((item) => {
                         return (
                             <Box key={'box1' + item.id}>
@@ -89,8 +94,8 @@ const SignalsScreen = (props) => {
     } else {
         return (
             <Box flex={1} bg="brand.900" alignItems="center" justifyContent="center">
-                <Text color="brand.50">Еще не было ни одного сигнала на сегодня. Будьте в курсе подписавшись на наш
-                    телеграм канал:</Text>
+                <Text color="brand.50">Еще не было ни одного сигнала на сегодня. {'\n'}Будьте в курсе подписавшись на наш
+                    телеграм канал:{'\n'}</Text>
                 <Link href="https://t.me/cashkeep" _text={{
                     color: "brand.0"
                 }}>
